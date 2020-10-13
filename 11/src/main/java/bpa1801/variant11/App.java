@@ -3,6 +3,7 @@ package bpa1801.variant11;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -35,6 +36,12 @@ public class App
 	 *	 1 <=> 2
 	 */
     static int lilysHomework(int[] arr) {
+        int resultAsc = sortAscending(Arrays.copyOf(arr, arr.length));
+        int resultDesc = sortDescending(Arrays.copyOf(arr, arr.length));
+        return resultAsc < resultDesc ? resultAsc : resultDesc;
+    }
+
+    static int sortAscending(int[] arr) {
         int result = 0;
         // Сортировка выбором
         for (int i = 0; i < arr.length; i++) {
@@ -46,6 +53,24 @@ public class App
                 int x = arr[i];
                 arr[i] = arr[min];
                 arr[min] = x;
+                result += 1;
+            }
+        }
+        return result;
+    }
+
+    static int sortDescending(int[] arr) {
+        int result = 0;
+        // Сортировка выбором
+        for (int i = 0; i < arr.length; i++) {
+            int max = i;
+            for (int j = i + 1; j < arr.length; j++) 
+                if (arr[j] > arr[max])
+                    max = j;
+            if (max != i) {
+                int x = arr[i];
+                arr[i] = arr[max];
+                arr[max] = x;
                 result += 1;
             }
         }
