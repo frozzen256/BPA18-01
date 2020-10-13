@@ -43,7 +43,6 @@ public class Solution {
 
         bufferedWriter.write(String.valueOf(result));
         bufferedWriter.newLine();
-
         bufferedWriter.close();
 
         scanner.close();
