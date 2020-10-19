@@ -75,65 +75,82 @@ YES
 NO
 */
 
-import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
-
 public class Solution {
 
     // Complete the gridSearch function below.
     static String gridSearch(String[] G, String[] P) {
 
+        int gDim = G[0].length();
+        int pDim = P[0].length();
+        int templateIndex = 0;
+        int columnStart = 0, columnEnd = gDim - 1;
 
+        String template = P[templateIndex++];
+
+        for (int i = 0, limit = G.length - P.length; i < limit; i++) {
+            String row = G[i];
+
+            if (row.substring(columnStart, columnEnd + 1).contains(template)) {
+                if (row.indexOf(template) >= columnStart && row.lastIndexOf(template) + pDim <= columnEnd) {
+                    columnStart = row.indexOf(template);
+                    columnEnd = columnStart == row.lastIndexOf(template) ? columnStart + pDim : row.lastIndexOf(template) + pDim;
+                }
+                if (templateIndex == P.length) {
+                    return "YES";
+                }
+
+                template = P[templateIndex++];
+            }
+        }
+        return "NO";
     }
 
-    private static final Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) {
+        String[] testCase1 = {
+                "7283455864",
+                "6731158619",
+                "8988242643",
+                "3830589324",
+                "2229505813",
+                "5633845374",
+                "6473530293",
+                "7053106601",
+                "0834282956",
+                "4607924137"
+        };
+        String[] testPattern1 = {
+                "9505",
+                "3845",
+                "3530",
+        };
 
-    public static void main(String[] args) throws IOException {
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+        String result = gridSearch(testCase1, testPattern1);
+        System.out.printf("testCase1 result: %s  testCase1 target: YES%n", result);
 
-        int t = scanner.nextInt();
-        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+        String[] testCase2 = {
+                "400453592126560",
+                "114213133098692",
+                "474386082879648",
+                "522356951189169",
+                "887109450487496",
+                "252802633388782",
+                "502771484966748",
+                "075975207693780",
+                "511799789562806",
+                "404007454272504",
+                "549043809916080",
+                "962410809534811",
+                "445893523733475",
+                "768705303214174",
+                "650629270887160",
+        };
 
-        for (int tItr = 0; tItr < t; tItr++) {
-            String[] RC = scanner.nextLine().split(" ");
+        String[] testPattern2 = {
+                "99",
+                "99"
+        };
 
-            int R = Integer.parseInt(RC[0]);
-
-            int C = Integer.parseInt(RC[1]);
-
-            String[] G = new String[R];
-
-            for (int i = 0; i < R; i++) {
-                String GItem = scanner.nextLine();
-                G[i] = GItem;
-            }
-
-            String[] rc = scanner.nextLine().split(" ");
-
-            int r = Integer.parseInt(rc[0]);
-
-            int c = Integer.parseInt(rc[1]);
-
-            String[] P = new String[r];
-
-            for (int i = 0; i < r; i++) {
-                String PItem = scanner.nextLine();
-                P[i] = PItem;
-            }
-
-            String result = gridSearch(G, P);
-
-            bufferedWriter.write(result);
-            bufferedWriter.newLine();
-        }
-
-        bufferedWriter.close();
-
-        scanner.close();
+        result = gridSearch(testCase2, testPattern2);
+        System.out.printf("testCase2 result: %s  testCase1 target: NO%n", result);
     }
 }
