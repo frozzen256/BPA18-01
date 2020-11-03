@@ -24,20 +24,7 @@ public class Main {
      *		    7
      */
 
-    static int calc_tree_height(int n) {
-        int tree_height = 1;
-        int spring = 2;
-        int summer = 1;
-        for (int i = 0; i<n;i++){
-            if ((i%2)==0){
-                tree_height *= spring;
-            }
-            else{
-                tree_height += summer;
-            }
-        }
-        return tree_height;
-    }
+
 
     private static final Scanner scanner = new Scanner(System.in);
 
@@ -45,21 +32,43 @@ public class Main {
 	// write your code here
         System.out.println("Hello, BPA18-01!");
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("OUTPUT_PATH"));
-        System.out.println("Введите количество тестовых примеров: ");
+        System.out.print("Введите количество тестовых примеров: ");
         int t = scanner.nextInt();
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
-        System.out.println("Введите количество циклов роста: ");
+        Tree spruce = new Tree();   // создание объекта spruce (ель)
+
         for (int tItr = 0; tItr < t; tItr++) {
-            int n = scanner.nextInt();
+            System.out.print("Введите количество циклов роста: ");
+            spruce.n = scanner.nextInt();
             scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
             int result = 0;
-            result = calc_tree_height(n);
-            System.out.println("Result: " + result);
+            result = spruce.getTreeHeight(spruce.n);    //  Вызов метода getTreeHeight у объекта spruce
+            System.out.println("Result: " + result);    //  Вывод на экран
+
             //bufferedWriter.write(String.valueOf(result));
             //bufferedWriter.newLine();
         }
         bufferedWriter.close();
         scanner.close();
+    }
+}
+
+class Tree{
+    int n;                      //  Количество циклов роста
+    int height= 1;              //  высота дерева (высаживается высотой 1 метр)
+    int growthSpring = 2;       //  Рост дерева весной  (удваивается)
+    int growthSummer= 1;        //  Рост дерева летом (прибавляет 1 метр)
+
+    public int getTreeHeight(int n) {
+        for (int i = 0; i<n;i++){
+            if ((i%2)==0){
+                height *= growthSpring;
+            }
+            else{
+                height += growthSummer;
+            }
+        }
+        return height;
     }
 }
