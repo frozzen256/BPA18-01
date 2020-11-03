@@ -26,22 +26,22 @@ public class solution {
 
     public static void main(String[] args) throws IOException {
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("OUTPUT_PATH"));
+        Functi func = new Functi();
 
-        int n = scanner.nextInt();
+        func.setK(scanner.nextInt());
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
-        int[] ar = new int[n];
+        func.Fo();
 
         String[] arItems = scanner.nextLine().split(" ");
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < func.getK(); i++) {
             int arItem = Integer.parseInt(arItems[i]);
-            ar[i] = arItem;
+            func.setAr(i,arItem);
         }
-        Functi func = new Functi();
-        int result = func.getSock(ar);
-        System.out.println("Количество пар " + result);
+
+        System.out.println("Количество пар " + func.getSock(func.getAr()));
         /*bufferedWriter.write(String.valueOf(result));
         bufferedWriter.newLine();*/
 
