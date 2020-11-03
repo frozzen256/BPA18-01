@@ -20,23 +20,7 @@ public class solution {
 
 
     // Complete the sockMerchant function below.
-    public static int sockMerchant(int[] ar) {
-    int n = 0;
-    for (int i = 0; i < ar.length-1; i++)
-    {
-        if (ar[i] != 0) {
-            for (int j = i+1; j < ar.length; j++) {
-                if (ar[i] == ar[j]) {
-                    ar[i] = 0;
-                    ar[j] = 0;
-                    n++;
-                    break;
-                }
-            }
-        }
-    }
-    return n;
-    }
+    //public static int sockMerchant(int[] ar) {}
 
     private static final Scanner scanner = new Scanner(System.in);
 
@@ -55,7 +39,8 @@ public class solution {
             int arItem = Integer.parseInt(arItems[i]);
             ar[i] = arItem;
         }
-        int result = sockMerchant(ar);
+        Functi func = new Functi();
+        int result = func.getSock(ar);
         System.out.println("Количество пар " + result);
         /*bufferedWriter.write(String.valueOf(result));
         bufferedWriter.newLine();*/
