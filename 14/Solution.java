@@ -1,77 +1,96 @@
 /*
-*Акерленд - город с домами, расположенными вдоль дороги. Мэр хочет установить 
-*радиопередатчики на крышах домов города. Каждый передатчик имеет фиксированный 
-*диапазон, что означает, что он может передавать сигнал в пределах этого расстояния.
-*По карте Акерленда и дальности передачи определите минимальное количество 
-*передатчиков, чтобы каждый дом находился в пределах досягаемости хотя бы одного 
-*передатчика. 
+*РђРєРµСЂР»РµРЅРґ - РіРѕСЂРѕРґ СЃ РґРѕРјР°РјРё, СЂР°СЃРїРѕР»РѕР¶РµРЅРЅС‹РјРё РІРґРѕР»СЊ РґРѕСЂРѕРіРё. РњСЌСЂ С…РѕС‡РµС‚ СѓСЃС‚Р°РЅРѕРІРёС‚СЊ 
+*СЂР°РґРёРѕРїРµСЂРµРґР°С‚С‡РёРєРё РЅР° РєСЂС‹С€Р°С… РґРѕРјРѕРІ РіРѕСЂРѕРґР°. РљР°Р¶РґС‹Р№ РїРµСЂРµРґР°С‚С‡РёРє РёРјРµРµС‚ С„РёРєСЃРёСЂРѕРІР°РЅРЅС‹Р№ 
+*РґРёР°РїР°Р·РѕРЅ, С‡С‚Рѕ РѕР·РЅР°С‡Р°РµС‚, С‡С‚Рѕ РѕРЅ РјРѕР¶РµС‚ РїРµСЂРµРґР°РІР°С‚СЊ СЃРёРіРЅР°Р» РІ РїСЂРµРґРµР»Р°С… СЌС‚РѕРіРѕ СЂР°СЃСЃС‚РѕСЏРЅРёСЏ.
+*РџРѕ РєР°СЂС‚Рµ РђРєРµСЂР»РµРЅРґР° Рё РґР°Р»СЊРЅРѕСЃС‚Рё РїРµСЂРµРґР°С‡Рё РѕРїСЂРµРґРµР»РёС‚Рµ РјРёРЅРёРјР°Р»СЊРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ 
+*РїРµСЂРµРґР°С‚С‡РёРєРѕРІ, С‡С‚РѕР±С‹ РєР°Р¶РґС‹Р№ РґРѕРј РЅР°С…РѕРґРёР»СЃСЏ РІ РїСЂРµРґРµР»Р°С… РґРѕСЃСЏРіР°РµРјРѕСЃС‚Рё С…РѕС‚СЏ Р±С‹ РѕРґРЅРѕРіРѕ 
+*РїРµСЂРµРґР°С‚С‡РёРєР°. 
 *
-*Например дома расположены х=х[1,2,3,5,9], передатчик имеет покрытие 1. Для покрытия всех
-*домов передатчик нужно разместить на домах 2, 5 и 9, т.е. необходимо 3 передатчика.
+*РќР°РїСЂРёРјРµСЂ РґРѕРјР° СЂР°СЃРїРѕР»РѕР¶РµРЅС‹ С…=С…[1,2,3,5,9], РїРµСЂРµРґР°С‚С‡РёРє РёРјРµРµС‚ РїРѕРєСЂС‹С‚РёРµ 1. Р”Р»СЏ РїРѕРєСЂС‹С‚РёСЏ РІСЃРµС…
+*РґРѕРјРѕРІ РїРµСЂРµРґР°С‚С‡РёРє РЅСѓР¶РЅРѕ СЂР°Р·РјРµСЃС‚РёС‚СЊ РЅР° РґРѕРјР°С… 2, 5 Рё 9, С‚.Рµ. РЅРµРѕР±С…РѕРґРёРјРѕ 3 РїРµСЂРµРґР°С‚С‡РёРєР°.
 *
-*Пример:
+*РџСЂРёРјРµСЂ #1:
 *
-*5 1
-*
+*1 
 *1 2 3 4 5
-*Ответ: 2
+*РћС‚РІРµС‚: 2
 *
-*(на доме 2 и 4)
+*(РЅР° РґРѕРјРµ 2 Рё 4)
 *
-*Пример:
+*РџСЂРёРјРµСЂ #2:
 *
-*8 2
+*2
 *7 2 4 6 5 9 12 11
-*Ответ: 3
+*РћС‚РІРµС‚: 3
 *
-*(на доме 4, 9 и 12)
+*(РЅР° РґРѕРјРµ 4, 9 Рё 12)
 */
 
- import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
+import java.io.*;
 import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
 
 public class Solution {
 
-    // Complete the function below.
-    static int ackerlandRadioTransmitters(int[] x, int k) {
-
-
-    }
-
     private static final Scanner scanner = new Scanner(System.in);
 
+    static int ackerlandRadioTransmitters(int[] housesNumbers, int broadcastRange) {
+        Arrays.sort(housesNumbers);
+        List<Integer> broadcastHouseNumbers = new ArrayList<Integer>();
+        int i = 0;
+        // Find first broadcast house 
+        for (int j = housesNumbers.length - 1; j >= i; j--) {
+            if (housesNumbers[i] + broadcastRange >= housesNumbers[j]) {
+                broadcastHouseNumbers.add(housesNumbers[j]);
+                System.out.print(housesNumbers[j] + " ");
+                i = j;
+                break;
+            }
+        }
+        // Find intermediate broadcast house
+        while (housesNumbers[i] + broadcastRange <= housesNumbers[housesNumbers.length - 1] - broadcastRange) {
+            for (int j = i; j < housesNumbers.length; j++) {
+                if (housesNumbers[i] + broadcastRange <= housesNumbers[j] - broadcastRange) {
+                    broadcastHouseNumbers.add(housesNumbers[j]);
+                    System.out.print(housesNumbers[j] + " ");
+                    i = j;
+                    break;
+                }
+            }
+        }
+        // Check the last house for broadcast installation
+        if (housesNumbers[i] + broadcastRange < housesNumbers[housesNumbers.length - 1]) {
+            broadcastHouseNumbers.add(housesNumbers[housesNumbers.length - 1]);
+            System.out.print(housesNumbers[housesNumbers.length - 1] + " ");
+        }
+        return broadcastHouseNumbers.size();
+    }
+
     public static void main(String[] args) throws IOException {
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
-
-        String[] nk = scanner.nextLine().split(" ");
-
-        int n = Integer.parseInt(nk[0]);
-
-        int k = Integer.parseInt(nk[1]);
-
-        int[] x = new int[n];
-
-        String[] xItems = scanner.nextLine().split(" ");
-        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
-
-        for (int i = 0; i < n; i++) {
-            int xItem = Integer.parseInt(xItems[i]);
-            x[i] = xItem;
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("E:\\solution.txt"));
+        System.out.println("Enter integer broadcast range:");
+        int broadcastRange = Integer.parseInt(scanner.nextLine());
+        if (broadcastRange == 0) {
+            bufferedWriter.close();
+            scanner.close();
+            throw new IOException("Unexpected broadcast range: zero");
         }
 
-        int result = ackerlandRadioTransmitters(x, k);
+        System.out.println("Enter array of integer houses numbers:");
+        int[] housesNumbers;
+        String[] rawHousesNumbers = scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?").nextLine().split(" ");
 
-        bufferedWriter.write(String.valueOf(result));
+        housesNumbers = new int[rawHousesNumbers.length];
+
+        for (int i = 0; i < housesNumbers.length; i++) {
+            housesNumbers[i] = Integer.parseInt(rawHousesNumbers[i]);
+        }
+        System.out.println("Target houses for broadcast installation:");
+        int result = ackerlandRadioTransmitters(housesNumbers, broadcastRange);
+
+        bufferedWriter.write("Number of houses for broadcast installation: " + String.valueOf(result));
         bufferedWriter.newLine();
-
         bufferedWriter.close();
 
         scanner.close();
     }
 }
-
