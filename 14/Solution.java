@@ -66,7 +66,9 @@ public class Solution {
     }
 
     public static void main(String[] args) throws IOException {
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("E:\\solution.txt"));
+        BufferedWriter bufferedWriter = new BufferedWriter(
+            new FileWriter(System.getProperty("user.dir") + File.separator + "14" + File.separator + "solution.txt")
+        );
         System.out.println("Enter integer broadcast range:");
         int broadcastRange = Integer.parseInt(scanner.nextLine());
         if (broadcastRange == 0) {
