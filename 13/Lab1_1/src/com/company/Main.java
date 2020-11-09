@@ -25,11 +25,19 @@ public class Main {
     static int pageCount(int n, int p) {
         if (p > n) {
             return -1;
-        } else {
-            int k;
-            k = n - p;
-            return Math.min(k, p);
         }
+        else
+            {
+                int k = n - p;
+                if (k > n / 2)
+                {
+                    return n - k - 1;
+                }
+                else
+                {
+                    return k;
+                }
+            }
 
     }
 
@@ -49,6 +57,7 @@ public class Main {
         if (result == -1) {
             System.out.println("Ошибка");
         } else {
+            System.out.println("Количество страниц: " + result);
             bufferedWriter.write(String.valueOf(result));
             bufferedWriter.newLine();
         }
