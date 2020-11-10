@@ -41,7 +41,11 @@ public class solution {
             func.setAr(i,arItem);
         }
 
-        System.out.println("Количество пар " + func.getSock(func.getAr()));
+        Runnable task = () -> {
+            System.out.println("Количество пар " + func.getSock(func.getAr()));
+        };
+        new Thread(task).start();
+
         /*bufferedWriter.write(String.valueOf(result));
         bufferedWriter.newLine();*/
 
