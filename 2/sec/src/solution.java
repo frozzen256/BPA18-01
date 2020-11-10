@@ -1,12 +1,10 @@
-import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
 
-public class Solution {
+public class solution {
+
     /*
      * Федор работает в магазине одежды. У него есть большая куча носков,
      * которые он должен разобрать по парам по цвету для продажи.
@@ -22,15 +20,28 @@ public class Solution {
 
 
     // Complete the sockMerchant function below.
-    static int sockMerchant(int n, int[] ar) {
-
-
+    public static int sockMerchant(int[] ar) {
+    int n = 0;
+    for (int i = 0; i < ar.length-1; i++)
+    {
+        if (ar[i] != 0) {
+            for (int j = i+1; j < ar.length; j++) {
+                if (ar[i] == ar[j]) {
+                    ar[i] = 0;
+                    ar[j] = 0;
+                    n++;
+                    break;
+                }
+            }
+        }
+    }
+    return n;
     }
 
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws IOException {
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("OUTPUT_PATH"));
 
         int n = scanner.nextInt();
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
@@ -44,9 +55,10 @@ public class Solution {
             int arItem = Integer.parseInt(arItems[i]);
             ar[i] = arItem;
         }
-
-         bufferedWriter.write(String.valueOf(result));
-        bufferedWriter.newLine();
+        int result = sockMerchant(ar);
+        System.out.println("Количество пар " + result);
+        /*bufferedWriter.write(String.valueOf(result));
+        bufferedWriter.newLine();*/
 
         bufferedWriter.close();
 
