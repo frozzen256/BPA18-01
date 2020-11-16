@@ -22,49 +22,76 @@ public class Main {
      * Ответ:  1;	0.
      */
 
-    static int pageCount(int n, int p) {
-        if (p > n) {
-            return -1;
-        }
-        else
-            {
-                int k = n - p;
-                if (k > n / 2)
-                {
-                    return n - k - 1;
-                }
-                else
-                {
-                    return k;
-                }
-            }
 
-    }
 
 
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws IOException {
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+
+        //scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])*");
+
+        //scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])*");
+
+        MyThread myThread = new MyThread();
+        myThread.start();
+
+        System.out.println(MyThread.currentThread().getName());
+
+        //scanner.close();
+    }
+}
+
+class MyThread extends Thread {
+
+    public void run() {
+        //BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        lymb count = () -> {
+
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Введите количество страниц: ");
         int n = scanner.nextInt();
-        //scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])*");
+
+        System.out.println(MyThread.currentThread().getName());
         System.out.println("Введите нужную страницу: ");
         int p = scanner.nextInt();
-        //scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])*");
+        int result = 0;
 
-        int result = pageCount(n, p);
-        if (result == -1) {
+        if (p > n) {
             System.out.println("Ошибка");
-        } else {
-            System.out.println("Количество страниц: " + result);
-            bufferedWriter.write(String.valueOf(result));
-            bufferedWriter.newLine();
         }
+        else
+        {
+            int k = n - p;
 
-
-        bufferedWriter.close();
-
-        scanner.close();
+            if (k > n / 2)
+            {
+                result = n - k - 1;
+            }
+            else
+            {
+                result = k;
+            }
+            if (result == -1) {
+                System.out.println("Ошибка");
+            } else {
+                System.out.println("Количество страниц: " + result);
+                //bufferedWriter.write(String.valueOf(result));
+                //bufferedWriter.newLine();
+                //bufferedWriter.close();
+            }
+        }
+            return result;
+        };
+        count.pageCount();
     }
+
+
+
+    public interface lymb {
+        public int pageCount ();
+    }
+
 }
