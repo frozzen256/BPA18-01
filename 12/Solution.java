@@ -103,5 +103,6 @@ public class Solution {
 
         String result = gridAbstraction.searchPattern(pattern) ? "YES" : "NO";
         System.out.println(result);
+
     }
 }

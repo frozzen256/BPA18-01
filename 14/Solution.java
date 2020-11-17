@@ -91,6 +91,7 @@ public class Solution {
 
         bufferedWriter.write("Number of houses for broadcast installation: " + String.valueOf(result));
         bufferedWriter.newLine();
+
         bufferedWriter.close();
 
         scanner.close();
