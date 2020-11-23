@@ -34,27 +34,12 @@ public class Main {
 
         //scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])*");
 
-        MyThread myThread = new MyThread();
-        myThread.start();
-
-        System.out.println(MyThread.currentThread().getName());
-
-        //scanner.close();
-    }
-}
-
-class MyThread extends Thread {
-
-    public void run() {
-        //BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
-
-        lymb count = () -> {
-
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите количество страниц: ");
         int n = scanner.nextInt();
 
-        System.out.println(MyThread.currentThread().getName());
+        Runnable Lymb = () -> {
+        System.out.println(Thread.currentThread().getName());
         System.out.println("Введите нужную страницу: ");
         int p = scanner.nextInt();
         int result = 0;
@@ -83,15 +68,14 @@ class MyThread extends Thread {
                 //bufferedWriter.close();
             }
         }
-            return result;
-        };
-        count.pageCount();
-    }
 
-
-
-    public interface lymb {
-        public int pageCount ();
-    }
+    };
+        new Thread(Lymb).start();
 
 }
+
+
+
+
+}
+
