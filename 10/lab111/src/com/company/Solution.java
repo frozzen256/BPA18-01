@@ -26,63 +26,59 @@ import java.util.*;
                 int gradesItem = Integer.parseInt(scan.nextLine().trim());
                 gr[gradesItr] = gradesItem;
             }*/
-                    MyRunner r = new MyRunner();
-                    Thread thread2 = new Thread(r);
-                    thread2.start();
+
+
 
 
                    // bw.newLine();
-
-                   // bw.close();
-                }
-            }
-                            class MyRunner implements Runnable {
-                                public void run(){
-                                    lumbda value = () -> {
-                                    System.out.println(Thread.currentThread().getName());
-                                    Scanner scan = new Scanner(System.in);
-                                    System.out.println("Введите колличетство студентов N= ");
-                                    int n = Integer.parseInt(scan.nextLine().trim());
-                                    if (n < 1 || n > 60) {
-                                        System.out.println("Введено недопустимое количесвто студентов ");
-                                    }
-                                    int[] gr = new int[n];
-                                    for (int i = 0; i < n; i++) {
-                                        System.out.println("Введите балл студента " + (i + 1));
-                                        Scanner in = new Scanner(System.in);
-                                        gr[i] = in.nextInt();
-                                        if (gr[i] % 5 >= 3) {
-                                            gr[i] = ((gr[i] / 5) + 1) * 5;
-                                            System.out.println(gr[i]);
-                                        } else {
-                                            gr[i] = (gr[i] / 5) * 5;
-                                            System.out.println(gr[i]);
-                                        }
-
-                                    }
-                                    for (int i = 0; i < n; i++) {
-                                        if (gr[i] >= 40) {
-                                            System.out.println("Студент " + (i + 1) + " аттестован");
-                                        } else {
-                                            System.out.println("Студент " + (i + 1) + " не аттестован");
-                                        }
-                                    }
-                                    for (int resultItr = 0; resultItr < gr.length; resultItr++) {
-                                        // bw.write(String.valueOf(result[resultItr]));
-
-                                        if (resultItr != gr.length - 1) {
-                                            // bw.write("\n");
-                                        }
-                                    }
-                                    return 0;
-                                };
-                                    value.pagevalue();
+                    // bw.close();
+                   Runnable runnable = () -> {
+                            System.out.println(Thread.currentThread().getName());
+                            Scanner scan = new Scanner(System.in);
+                            System.out.println("Введите колличетство студентов N= ");
+                            int n = Integer.parseInt(scan.nextLine().trim());
+                            if (n < 1 || n > 60) {
+                                System.out.println("Введено недопустимое количесвто студентов ");
+                            }
+                            int[] gr = new int[n];
+                            for (int i = 0; i < n; i++) {
+                                System.out.println("Введите балл студента " + (i + 1));
+                                Scanner in = new Scanner(System.in);
+                                gr[i] = in.nextInt();
+                                if (gr[i] % 5 >= 3) {
+                                    gr[i] = ((gr[i] / 5) + 1) * 5;
+                                    System.out.println(gr[i]);
+                                } else {
+                                    gr[i] = (gr[i] / 5) * 5;
+                                    System.out.println(gr[i]);
                                 }
-                                @FunctionalInterface
-                                    public interface lumbda{
-                                        public int pagevalue();
+
+                            }
+                            for (int i = 0; i < n; i++) {
+                                if (gr[i] >= 40) {
+                                    System.out.println("Студент " + (i + 1) + " аттестован");
+                                } else {
+                                    System.out.println("Студент " + (i + 1) + " не аттестован");
                                 }
+                            }
+                            for (int resultItr = 0; resultItr < gr.length; resultItr++) {
+                                // bw.write(String.valueOf(result[resultItr]));
+
+                                if (resultItr != gr.length - 1) {
+                                    // bw.write("\n");
                                 }
+                            }
+
+                        };new Thread(runnable).start();
+                    }
+
+                    }
+
+
+
+
+
+
 
 
 
