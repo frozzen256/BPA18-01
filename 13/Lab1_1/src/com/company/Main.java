@@ -1,7 +1,9 @@
 package com.company;
 
-import java.io.*;
-import java.util.*;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
 
 public class Main {
 
@@ -28,54 +30,31 @@ public class Main {
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws IOException {
-
-
-        //scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])*");
-
-        //scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])*");
-
-        Scanner scanner = new Scanner(System.in);
+        System.out.println(Thread.currentThread().getName());
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
         System.out.println("Введите количество страниц: ");
         int n = scanner.nextInt();
-
-        Runnable Lymb = () -> {
-        System.out.println(Thread.currentThread().getName());
+        //scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])*");
         System.out.println("Введите нужную страницу: ");
         int p = scanner.nextInt();
-        int result = 0;
 
-        if (p > n) {
-            System.out.println("Ошибка");
-        }
-        else
-        {
-            int k = n - p;
+        //scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])*");
 
-            if (k > n / 2)
-            {
-                result = n - k - 1;
-            }
-            else
-            {
-                result = k;
-            }
+        Runnable runnable = () -> {
+            int result = Calc.pageCount(n, p);
             if (result == -1) {
                 System.out.println("Ошибка");
             } else {
                 System.out.println("Количество страниц: " + result);
                 //bufferedWriter.write(String.valueOf(result));
                 //bufferedWriter.newLine();
-                //bufferedWriter.close();
             }
-        }
 
-    };
-        new Thread(Lymb).start();
 
+            //bufferedWriter.close();
+
+            scanner.close();
+        };
+        new Thread(runnable).start();
+    }
 }
-
-
-
-
-}
-
