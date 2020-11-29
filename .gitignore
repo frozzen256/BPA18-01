@@ -1,0 +1,39 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Java template
+# Compiled class file
+12/*.class
+
+# Log file
+12/*.log
+
+# BlueJ files
+12/*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.12/mtj.tmp/
+
+# Package Files #
+12/*.jar
+12/*.war
+12/*.nar
+12/*.ear
+12/*.zip
+12/*.tar.gz
+12/*.rar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+12/hs_err_pid*
+
+### Maven template
+12/target/
+12/pom.xml.tag
+12/pom.xml.releaseBackup
+12/pom.xml.versionsBackup
+12/pom.xml.next
+12/release.properties
+12/dependency-reduced-pom.xml
+12/buildNumber.properties
+12/.mvn/timing.properties
+# https://github.com/takari/maven-wrapper#usage-without-binary-jar
+12/.mvn/wrapper/maven-wrapper.jar
+
