@@ -75,82 +75,32 @@ YES
 NO
 */
 
+import java.util.Scanner;
+
 public class Solution {
 
-    // Complete the gridSearch function below.
-    static String gridSearch(String[] G, String[] P) {
-
-        int gDim = G[0].length();
-        int pDim = P[0].length();
-        int templateIndex = 0;
-        int columnStart = 0, columnEnd = gDim - 1;
-
-        String template = P[templateIndex++];
-
-        for (int i = 0, limit = G.length - P.length; i < limit; i++) {
-            String row = G[i];
-
-            if (row.substring(columnStart, columnEnd + 1).contains(template)) {
-                if (row.indexOf(template) >= columnStart && row.lastIndexOf(template) + pDim <= columnEnd) {
-                    columnStart = row.indexOf(template);
-                    columnEnd = columnStart == row.lastIndexOf(template) ? columnStart + pDim : row.lastIndexOf(template) + pDim;
-                }
-                if (templateIndex == P.length) {
-                    return "YES";
-                }
-
-                template = P[templateIndex++];
-            }
-        }
-        return "NO";
-    }
-
     public static void main(String[] args) {
-        String[] testCase1 = {
-                "7283455864",
-                "6731158619",
-                "8988242643",
-                "3830589324",
-                "2229505813",
-                "5633845374",
-                "6473530293",
-                "7053106601",
-                "0834282956",
-                "4607924137"
-        };
-        String[] testPattern1 = {
-                "9505",
-                "3845",
-                "3530",
-        };
+        final Scanner scanner = new Scanner(System.in);
 
-        String result = gridSearch(testCase1, testPattern1);
-        System.out.printf("testCase1 result: %s  testCase1 target: YES%n", result);
+        System.out.println("Insert grid dimension");
+        final int gDim = scanner.nextInt();
+        final String[] grid = new String[gDim];
+        for (int i = 0; i < gDim; i++) {
+            System.out.printf("Insert %d row of Grid%n", i + 1);
+            grid[i] = scanner.next();
+        }
 
-        String[] testCase2 = {
-                "400453592126560",
-                "114213133098692",
-                "474386082879648",
-                "522356951189169",
-                "887109450487496",
-                "252802633388782",
-                "502771484966748",
-                "075975207693780",
-                "511799789562806",
-                "404007454272504",
-                "549043809916080",
-                "962410809534811",
-                "445893523733475",
-                "768705303214174",
-                "650629270887160",
-        };
+        System.out.println("Insert pattern dimension");
+        final int pDim = scanner.nextInt();
+        final String[] pattern = new String[pDim];
+        for (int i = 0; i < pDim; i++) {
+            System.out.printf("Insert %d row of Pattern%n", i + 1);
+            pattern[i] = scanner.next();
+        }
 
-        String[] testPattern2 = {
-                "99",
-                "99"
-        };
+        Grid gridAbstraction = new Grid(grid);
 
-        result = gridSearch(testCase2, testPattern2);
-        System.out.printf("testCase2 result: %s  testCase1 target: NO%n", result);
+        String result = gridAbstraction.searchPattern(pattern) ? "YES" : "NO";
+        System.out.println(result);
     }
 }
