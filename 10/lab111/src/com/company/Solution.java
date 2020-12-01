@@ -30,33 +30,16 @@ public class Solution {
         }
         int[] gr = new int[n];
 
-          /*  for (int gradesItr = 0; gradesItr < n; gradesItr++) {
+           for (int gradesItr = 0; gradesItr < n; gradesItr++) {
+                System.out.println("Введите балл студента " + (gradesItr + 1));
                 int gradesItem = Integer.parseInt(scan.nextLine().trim());
                 gr[gradesItr] = gradesItem;
-            }*/
-        Runnable runnable = () -> {
-            System.out.println(Thread.currentThread().getName());
-            int[] result = Funct.func(gr, n);
-            for (int i = 0; i < n; i++) {
-                if (result[i] >= 40) {
-                    System.out.println("Студент " + (i + 1) + " аттестован");
-                } else {
-                    System.out.println("Студент " + (i + 1) + " не аттестован");
-                }
             }
-            for (int resultItr = 0; resultItr < result.length; resultItr++) {
-                //  bw.write(String.valueOf(result[resultItr]));
+        Funct funct = new Funct();
+        funct.setGr(gr);
+        funct.setN(n);
 
-                if (resultItr != result.length - 1) {
-                    //  bw.write("\n");
-                }
-            }
-
-            //  bw.newLine();
-
-            //   bw.close();
-        };
-        new Thread(runnable).start();
+        new Thread(funct::funn).start();
     }
 }
 
