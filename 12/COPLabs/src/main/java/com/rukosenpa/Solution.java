@@ -98,9 +98,14 @@ public class Solution {
             pattern[i] = scanner.next();
         }
 
-        Grid gridAbstraction = new Grid(grid);
+        new Thread(() -> {
+            System.out.println("New  Started");
+            Grid gridAbstraction = new Grid(grid);
 
-        String result = gridAbstraction.searchPattern(pattern) ? "YES" : "NO";
-        System.out.println(result);
+            String result = gridAbstraction.searchPattern(pattern) ? "YES" : "NO";
+            System.out.println(result);
+
+        }).start();
+
     }
 }
