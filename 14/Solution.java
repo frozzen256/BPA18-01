@@ -1,11 +1,99 @@
-ДНК - это нуклеиновая кислота, присутствующая в организме живых существ. Каждый фрагмент ДНК содержит ряд генов, некоторые из которых полезны и 
-улучшают общее состояние ДНК. Каждый ген имеет ценность для здоровья, а общее состояние ДНК - это сумма значений здоровья всех полезных генов, 
-которые встречаются в качестве подстроки в ДНК. Мы представляем гены и ДНК в виде непустых цепочек строчных букв английского алфавита, 
-и один и тот же ген может появляться несколько раз как цепочка ДНК.
+/*
+*РђРєРµСЂР»РµРЅРґ - РіРѕСЂРѕРґ СЃ РґРѕРјР°РјРё, СЂР°СЃРїРѕР»РѕР¶РµРЅРЅС‹РјРё РІРґРѕР»СЊ РґРѕСЂРѕРіРё. РњСЌСЂ С…РѕС‡РµС‚ СѓСЃС‚Р°РЅРѕРІРёС‚СЊ 
+*СЂР°РґРёРѕРїРµСЂРµРґР°С‚С‡РёРєРё РЅР° РєСЂС‹С€Р°С… РґРѕРјРѕРІ РіРѕСЂРѕРґР°. РљР°Р¶РґС‹Р№ РїРµСЂРµРґР°С‚С‡РёРє РёРјРµРµС‚ С„РёРєСЃРёСЂРѕРІР°РЅРЅС‹Р№ 
+*РґРёР°РїР°Р·РѕРЅ, С‡С‚Рѕ РѕР·РЅР°С‡Р°РµС‚, С‡С‚Рѕ РѕРЅ РјРѕР¶РµС‚ РїРµСЂРµРґР°РІР°С‚СЊ СЃРёРіРЅР°Р» РІ РїСЂРµРґРµР»Р°С… СЌС‚РѕРіРѕ СЂР°СЃСЃС‚РѕСЏРЅРёСЏ.
+*РџРѕ РєР°СЂС‚Рµ РђРєРµСЂР»РµРЅРґР° Рё РґР°Р»СЊРЅРѕСЃС‚Рё РїРµСЂРµРґР°С‡Рё РѕРїСЂРµРґРµР»РёС‚Рµ РјРёРЅРёРјР°Р»СЊРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ 
+*РїРµСЂРµРґР°С‚С‡РёРєРѕРІ, С‡С‚РѕР±С‹ РєР°Р¶РґС‹Р№ РґРѕРј РЅР°С…РѕРґРёР»СЃСЏ РІ РїСЂРµРґРµР»Р°С… РґРѕСЃСЏРіР°РµРјРѕСЃС‚Рё С…РѕС‚СЏ Р±С‹ РѕРґРЅРѕРіРѕ 
+*РїРµСЂРµРґР°С‚С‡РёРєР°. 
+*
+*РќР°РїСЂРёРјРµСЂ РґРѕРјР° СЂР°СЃРїРѕР»РѕР¶РµРЅС‹ С…=С…[1,2,3,5,9], РїРµСЂРµРґР°С‚С‡РёРє РёРјРµРµС‚ РїРѕРєСЂС‹С‚РёРµ 1. Р”Р»СЏ РїРѕРєСЂС‹С‚РёСЏ РІСЃРµС…
+*РґРѕРјРѕРІ РїРµСЂРµРґР°С‚С‡РёРє РЅСѓР¶РЅРѕ СЂР°Р·РјРµСЃС‚РёС‚СЊ РЅР° РґРѕРјР°С… 2, 5 Рё 9, С‚.Рµ. РЅРµРѕР±С…РѕРґРёРјРѕ 3 РїРµСЂРµРґР°С‚С‡РёРєР°.
+*
+*РџСЂРёРјРµСЂ #1:
+*
+*1 
+*1 2 3 4 5
+*РћС‚РІРµС‚: 2
+*
+*(РЅР° РґРѕРјРµ 2 Рё 4)
+*
+*РџСЂРёРјРµСЂ #2:
+*
+*2
+*7 2 4 6 5 9 12 11
+*РћС‚РІРµС‚: 3
+*
+*(РЅР° РґРѕРјРµ 4, 9 Рё 12)
+*/
 
-Учитывая следующее:
-Массив цепочек полезных генов genes=[g0, ..., gn-1]. Обратите внимание, что эти генные последовательности не могут быть различимы.
-Массив значений здоровья гена health=[h0,...,hn-1], где каждое значение h[i] здоровья гена g[i].
-Набор нитей s ДНК, в котором определение каждой цепи состоит из трех компонентов, stat, end и d, где строка d - это ДНК, g[start], ... g[end] гены которой являются здоровыми.
-Найдите и распечатайте соответствующее общее состояние здоровья самой нездоровой (минимальное общее состояние) и самого здорового (максимальное общее состояние) цепей ДНК 
-в виде двух значений, разделенных пробелами в одной строке.
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    private static final Scanner scanner = new Scanner(System.in);
+
+    static int ackerlandRadioTransmitters(int[] housesNumbers, int broadcastRange) {
+        Arrays.sort(housesNumbers);
+        List<Integer> broadcastHouseNumbers = new ArrayList<Integer>();
+        int i = 0;
+        // Find first broadcast house 
+        for (int j = housesNumbers.length - 1; j >= i; j--) {
+            if (housesNumbers[i] + broadcastRange >= housesNumbers[j]) {
+                broadcastHouseNumbers.add(housesNumbers[j]);
+                System.out.print(housesNumbers[j] + " ");
+                i = j;
+                break;
+            }
+        }
+        // Find intermediate broadcast house
+        while (housesNumbers[i] + broadcastRange <= housesNumbers[housesNumbers.length - 1] - broadcastRange) {
+            for (int j = i; j < housesNumbers.length; j++) {
+                if (housesNumbers[i] + broadcastRange <= housesNumbers[j] - broadcastRange) {
+                    broadcastHouseNumbers.add(housesNumbers[j]);
+                    System.out.print(housesNumbers[j] + " ");
+                    i = j;
+                    break;
+                }
+            }
+        }
+        // Check the last house for broadcast installation
+        if (housesNumbers[i] + broadcastRange < housesNumbers[housesNumbers.length - 1]) {
+            broadcastHouseNumbers.add(housesNumbers[housesNumbers.length - 1]);
+            System.out.print(housesNumbers[housesNumbers.length - 1] + " ");
+        }
+        return broadcastHouseNumbers.size();
+    }
+
+    public static void main(String[] args) throws IOException {
+        BufferedWriter bufferedWriter = new BufferedWriter(
+            new FileWriter(System.getProperty("user.dir") + File.separator + "14" + File.separator + "solution.txt")
+        );
+        System.out.println("Enter integer broadcast range:");
+        int broadcastRange = Integer.parseInt(scanner.nextLine());
+        if (broadcastRange == 0) {
+            bufferedWriter.close();
+            scanner.close();
+            throw new IOException("Unexpected broadcast range: zero");
+        }
+
+        System.out.println("Enter array of integer houses numbers:");
+        int[] housesNumbers;
+        String[] rawHousesNumbers = scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?").nextLine().split(" ");
+
+        housesNumbers = new int[rawHousesNumbers.length];
+
+        for (int i = 0; i < housesNumbers.length; i++) {
+            housesNumbers[i] = Integer.parseInt(rawHousesNumbers[i]);
+        }
+        System.out.println("Target houses for broadcast installation:");
+        int result = ackerlandRadioTransmitters(housesNumbers, broadcastRange);
+
+        bufferedWriter.write("Number of houses for broadcast installation: " + String.valueOf(result));
+        bufferedWriter.newLine();
+
+        bufferedWriter.close();
+
+        scanner.close();
+    }
+}
