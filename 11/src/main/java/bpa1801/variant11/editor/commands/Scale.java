@@ -19,7 +19,6 @@ public class Scale extends AbstractGeneralCommand {
     }
 
     protected void applyForFigure(Figure figure) {
-        // TODO: fix for line
         Coordinates coordinates = figure.getCoordinates();
         CoordinatesValues currentValues = coordinates.getValues();
         switch (coordinates.getType()) {
@@ -31,8 +30,8 @@ public class Scale extends AbstractGeneralCommand {
                 figure.setCoordinates(new CoordinatesValues(
                     x1,
                     y1,
-                    x2 + (x2 - x1) * sx,
-                    y2 + (y2 - y1) * sy
+                    x2 + (x2 - x1) * (sx - 1),
+                    y2 + (y2 - y1) * (sy - 1)
                 ));
                 break;
             case Center:
@@ -58,8 +57,8 @@ public class Scale extends AbstractGeneralCommand {
                 figure.setCoordinates(new CoordinatesValues(
                     x1,
                     y1,
-                    (x2 + sx * x1) / (1 + sx),
-                    (y2 + sy * y1) / (1 + sy)
+                    (x2 + (sx - 1) * x1) / sx,
+                    (y2 + (sy - 1) * y1) / sy
                 ));
                 break;
             case Center:
