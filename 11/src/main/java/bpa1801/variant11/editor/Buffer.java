@@ -9,6 +9,19 @@ public class Buffer {
         figures.add(figure);
     }
 
+    public ArrayList<Figure> getFigures() {
+        return figures;
+    }
+
+    public Figure getByNameAndId(String name, String id) {
+        for (Figure figure : figures) {
+            if (figure.getName().equals(name) && figure.getId().equals(id)) {
+                return figure;
+            }
+        }
+        return null;
+    }
+
     public int size() {
         return figures.size();
     }

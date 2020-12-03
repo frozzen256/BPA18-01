@@ -22,7 +22,7 @@ public class CornerCoordinates implements Coordinates {
     
     public CoordinatesType getType()
     {
-        return CoordinatesType.Center;
+        return CoordinatesType.Corners;
     }
 
     public CoordinatesValues getValues()

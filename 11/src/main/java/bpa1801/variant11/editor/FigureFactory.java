@@ -9,7 +9,7 @@ import bpa1801.variant11.editor.figures.Line;
 import bpa1801.variant11.editor.figures.Rectangle;
 
 public class FigureFactory {
-    protected static Pattern pattern = Pattern.compile("^(rect|line|ellipse)\\[([^]]+)\\] (\\d+\\.?\\d*) (\\d+\\.?\\d*) (\\d+\\.?\\d*) (\\d+\\.?\\d*)$");
+    protected static Pattern pattern = Pattern.compile("^([^\\[]+)\\[([^\\]]+)\\] (\\d+\\.?\\d*) (\\d+\\.?\\d*) (\\d+\\.?\\d*) (\\d+\\.?\\d*)$");
 
     public static Figure deserialize(String line) {
         Matcher matcher = pattern.matcher(line);
