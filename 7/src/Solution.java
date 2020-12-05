@@ -1,7 +1,10 @@
 /*
-Когда в средстве просмотра PDF-файлов выбран непрерывный блок текста, выбранный фрагмент выделяется синим прямоугольником. В этой программе просмотра PDF 
-каждое слово выделяется независимо. Существует список высот символов, выровненных по индексу по их буквам. Например, «a» находится в индексе 0, а 
-«z» - в 25 индексе. Также будет строка. Используя указанную высоту букв, определите область выделения прямоугольника в предположении, что все буквы ширины 1 мм.
+Когда в средстве просмотра PDF-файлов выбран непрерывный блок текста, выбранный фрагмент выделяется синим прямоугольником.
+В этой программе просмотра PDF
+каждое слово выделяется независимо. Существует список высот символов, выровненных по индексу по их буквам.
+Например, «a» находится в индексе 0, а
+«z» - в 25 индексе. Также будет строка. Используя указанную высоту букв, определите область выделения прямоугольника в предположении,
+что все буквы ширины 1 мм.
 
 Sample Input 0
 
@@ -32,20 +35,10 @@ public class Solution {
 
     // Complete the designerPdfViewer function below.
 
-
-
-    static int designerPdfViewer(int[] h, String word) {
-        int max = 0;
-        for(char ch:word.toCharArray())
-            if(h[(int)ch - 97] > max)max = h[(int)ch - 97];
-        return word.length()*max;
-
-    }
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws IOException {
  //       BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
-
 
         int[] h = new int[26];
 
@@ -59,12 +52,9 @@ public class Solution {
 
 
         String word = scanner.nextLine();
-        System.out.print(designerPdfViewer(h, word));
-  //      bufferedWriter.write(String.valueOf(result));
-  //      bufferedWriter.newLine();
+        findRectangle findRectangle = new findRectangle(h, word);
 
-   //     bufferedWriter.close();
-
+        System.out.print(findRectangle.designerPdfViewer());
         scanner.close();
     }
 }
