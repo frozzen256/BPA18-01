@@ -42,6 +42,6 @@ public class Ellipse implements Figure {
 
     public String serialize()
     {
-        return String.format("%s[%s] %f %f %f %f", getName(), id, coordinates.x, coordinates.y, coordinates.w, coordinates.h);
+        return String.format("%s[%s] %.3f %.3f %.3f %.3f", getName(), id, coordinates.x, coordinates.y, coordinates.w, coordinates.h);
     }
 }

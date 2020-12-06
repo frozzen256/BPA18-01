@@ -41,6 +41,6 @@ public class Rectangle implements Figure {
 
     public String serialize()
     {
-        return String.format("%s[%s] %f %f %f %f", getName(), id, coordinates.x1, coordinates.y1, coordinates.x2, coordinates.y2);
+        return String.format("%s[%s] %.3f %.3f %.3f %.3f", getName(), id, coordinates.x1, coordinates.y1, coordinates.x2, coordinates.y2);
     }
 }
