@@ -35,4 +35,8 @@ public abstract class AbstractCommand implements Command {
         }
         return String.format("%s", getName());
     }
+
+    public static <T> T as(Class<T> t, Object o) {
+        return t.isInstance(o) ? t.cast(o) : null;
+    }
 }

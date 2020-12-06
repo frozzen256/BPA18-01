@@ -3,6 +3,8 @@ package bpa1801.variant11.editor.commands;
 import bpa1801.variant11.editor.Coordinates;
 import bpa1801.variant11.editor.Figure;
 import bpa1801.variant11.editor.Coordinates.CoordinatesValues;
+import bpa1801.variant11.editor.coordinates.CenterCoordinates;
+import bpa1801.variant11.editor.coordinates.CornerCoordinates;
 
 public class Translate extends AbstractGeneralCommand {
     private double dx;
@@ -20,51 +22,47 @@ public class Translate extends AbstractGeneralCommand {
 
     protected void applyForFigure(Figure figure) {
         Coordinates coordinates = figure.getCoordinates();
-        CoordinatesValues currentValues = coordinates.getValues();
         switch (coordinates.getType()) {
-            case Corners:
+            case Corners: {
+                CornerCoordinates c = as(CornerCoordinates.class, coordinates);
                 figure.setCoordinates(new CoordinatesValues(
-                    currentValues.value1 + dx,
-                    currentValues.value2 + dy,
-                    currentValues.value3 + dx,
-                    currentValues.value4 + dy
+                    c.x1 + dx,
+                    c.y1 + dy,
+                    c.x2 + dx,
+                    c.y2 + dy
                 ));
                 break;
-            case Center:
-                figure.setCoordinates(new CoordinatesValues(
-                    currentValues.value1 + dx,
-                    currentValues.value2 + dy,
-                    currentValues.value3,
-                    currentValues.value4
-                ));
+            }
+            case Center: {
+                CenterCoordinates c = as(CenterCoordinates.class, coordinates);
+                figure.setCoordinates(new CoordinatesValues(c.x + dx, c.y + dy, c.w, c.h));
                 break;
+            }
         }
     }
 
     protected void revertForFigure(Figure figure) {
         Coordinates coordinates = figure.getCoordinates();
-        CoordinatesValues currentValues = coordinates.getValues();
         switch (coordinates.getType()) {
-            case Corners:
+            case Corners: {
+                CornerCoordinates c = as(CornerCoordinates.class, coordinates);
                 figure.setCoordinates(new CoordinatesValues(
-                    currentValues.value1 - dx,
-                    currentValues.value2 - dy,
-                    currentValues.value3 - dx,
-                    currentValues.value4 - dy
+                    c.x1 - dx,
+                    c.y1 - dy,
+                    c.x2 - dx,
+                    c.y2 - dy
                 ));
                 break;
-            case Center:
-                figure.setCoordinates(new CoordinatesValues(
-                    currentValues.value1 - dx,
-                    currentValues.value2 - dy,
-                    currentValues.value3,
-                    currentValues.value4
-                ));
+            }
+            case Center: {
+                CenterCoordinates c = as(CenterCoordinates.class, coordinates);
+                figure.setCoordinates(new CoordinatesValues(c.x - dx, c.y - dy, c.w, c.h));
                 break;
+            }
         }
     }
 
     public String toString() {
-        return String.format("%s dx: %f, dy: %f", super.toString(), dx, dy); 
+        return String.format("%s dx: %.3f, dy: %.3f", super.toString(), dx, dy); 
     }
 }

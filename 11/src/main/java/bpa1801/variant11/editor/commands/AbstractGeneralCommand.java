@@ -9,10 +9,13 @@ public abstract class AbstractGeneralCommand extends AbstractCommand {
             for (Figure figure: buffer.getFigures()) {
                 applyForFigure(figure);
             }
+            return;
         }
         Figure figure = buffer.getByNameAndId(figureName, figureId);
         if (figure != null) {
             applyForFigure(figure);
+        } else {
+            System.out.println(String.format("Figure not found: %s[%s]", figureName, figureId));
         }
     }
 
@@ -21,10 +24,13 @@ public abstract class AbstractGeneralCommand extends AbstractCommand {
             for (Figure figure: buffer.getFigures()) {
                 revertForFigure(figure);
             }
+            return;
         }
         Figure figure = buffer.getByNameAndId(figureName, figureId);
         if (figure != null) {
             revertForFigure(figure);
+        } else {
+            System.out.println(String.format("Figure not found: %s[%s]", figureName, figureId));
         }
     }
 
