@@ -1,5 +1,7 @@
 package bpa1801.variant11.editor.figures;
 
+import java.util.Locale;
+
 import bpa1801.variant11.editor.Coordinates;
 import bpa1801.variant11.editor.Figure;
 import bpa1801.variant11.editor.Coordinates.CoordinatesValues;
@@ -42,6 +44,6 @@ public class Ellipse implements Figure {
 
     public String serialize()
     {
-        return String.format("%s[%s] %.3f %.3f %.3f %.3f", getName(), id, coordinates.x, coordinates.y, coordinates.w, coordinates.h);
+        return String.format(Locale.US, "%s[%s] %.3f %.3f %.3f %.3f", getName(), id, coordinates.x, coordinates.y, coordinates.w, coordinates.h);
     }
 }

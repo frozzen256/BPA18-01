@@ -2,6 +2,9 @@ package bpa1801.variant11.editor.figures;
 
 import bpa1801.variant11.editor.Figure;
 import bpa1801.variant11.editor.Coordinates.CoordinatesValues;
+
+import java.util.Locale;
+
 import bpa1801.variant11.editor.Coordinates;
 import bpa1801.variant11.editor.coordinates.CornerCoordinates;
 
@@ -41,6 +44,6 @@ public class Line implements Figure {
 
     public String serialize()
     {
-        return String.format("%s[%s] %.3f %.3f %.3f %.3f", getName(), id, coordinates.x1, coordinates.y1, coordinates.x2, coordinates.y2);
+        return String.format(Locale.US, "%s[%s] %.3f %.3f %.3f %.3f", getName(), id, coordinates.x1, coordinates.y1, coordinates.x2, coordinates.y2);
     }
 }

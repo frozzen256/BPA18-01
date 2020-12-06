@@ -1,5 +1,7 @@
 package bpa1801.variant11.editor.commands;
 
+import java.util.Locale;
+
 import bpa1801.variant11.editor.Coordinates;
 import bpa1801.variant11.editor.Figure;
 import bpa1801.variant11.editor.Coordinates.CoordinatesValues;
@@ -12,6 +14,8 @@ public class Scale extends AbstractGeneralCommand {
     private double sy;
     
     public Scale(double sx, double sy) {
+        assert sx != 0;
+        assert sy != 0;
         this.sx = sx;
         this.sy = sy;
     }
@@ -63,6 +67,6 @@ public class Scale extends AbstractGeneralCommand {
     }
 
     public String toString() {
-        return String.format("%s sx: %.3f, sy: %.3f", super.toString(), sx, sy); 
+        return String.format(Locale.US, "%s sx: %.3f, sy: %.3f", super.toString(), sx, sy); 
     }
 }

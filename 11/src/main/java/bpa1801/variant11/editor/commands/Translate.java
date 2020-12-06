@@ -1,5 +1,7 @@
 package bpa1801.variant11.editor.commands;
 
+import java.util.Locale;
+
 import bpa1801.variant11.editor.Coordinates;
 import bpa1801.variant11.editor.Figure;
 import bpa1801.variant11.editor.Coordinates.CoordinatesValues;
@@ -63,6 +65,6 @@ public class Translate extends AbstractGeneralCommand {
     }
 
     public String toString() {
-        return String.format("%s dx: %.3f, dy: %.3f", super.toString(), dx, dy); 
+        return String.format(Locale.US, "%s dx: %.3f, dy: %.3f", super.toString(), dx, dy); 
     }
 }
