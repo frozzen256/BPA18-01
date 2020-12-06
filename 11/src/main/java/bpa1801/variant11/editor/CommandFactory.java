@@ -14,7 +14,7 @@ public class CommandFactory {
     protected static Pattern scaleArgs = Pattern.compile(".* (\\d+\\.?\\d*) (\\d+\\.?\\d*)");
     protected static Pattern rotateArgs = Pattern.compile(".* (\\d+\\.?\\d*)$");
 
-    public static Command deserialize(String line, State state) throws AssertionError {
+    public static Command deserialize(String line, State state) throws IllegalArgumentException {
         Matcher matcher = pattern.matcher(line);
         Matcher argMatcher;
         Command command;

@@ -68,8 +68,8 @@ public class EditorApp
                 } else {
                     System.out.println(String.format("Wrong command line: %s", line));
                 }
-            } catch (AssertionError ex) {
-                System.out.println(String.format("Wrong params line: %s", ex.getMessage()));
+            } catch (IllegalArgumentException ex) {
+                System.out.println(String.format("Wrong params line: %s, error: %s", line, ex.getMessage()));
             }
             line = reader.next();
         }

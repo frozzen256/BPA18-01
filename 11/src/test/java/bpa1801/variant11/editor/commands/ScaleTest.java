@@ -10,12 +10,12 @@ import bpa1801.variant11.editor.EditorTestCase;
 
 public class ScaleTest extends EditorTestCase {
     @Test
-    public void testShouldThrowAssertionErrorOnBadParams() {
+    public void testShouldThrowErrorOnBadParams() {
         try {
             createCommands(new String[] {
                 "scale line[1] 2 0"
             }, createState(new String[] {}));
-        } catch (AssertionError ex) {
+        } catch (IllegalArgumentException ex) {
             assertTrue(true);
             return;
         }

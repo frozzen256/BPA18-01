@@ -14,8 +14,9 @@ public class Scale extends AbstractGeneralCommand {
     private double sy;
     
     public Scale(double sx, double sy) {
-        assert sx != 0;
-        assert sy != 0;
+        if (sx == 0.0 || sy == 0) {
+            throw new IllegalArgumentException("Scale params can't be equal to zero");
+        }
         this.sx = sx;
         this.sy = sy;
     }
