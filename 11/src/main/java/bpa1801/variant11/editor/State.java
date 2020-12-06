@@ -10,4 +10,12 @@ public class State {
         buffer = new Buffer();
         commands = new Stack<Command>();
     }
+
+    public static State create(Figure[] figures) {
+        State state = new State();
+        for (Figure figure: figures) {
+            state.buffer.add(figure);
+        }
+        return state;
+    }
 }

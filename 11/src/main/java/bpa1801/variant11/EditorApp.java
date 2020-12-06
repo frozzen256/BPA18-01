@@ -3,6 +3,7 @@ package bpa1801.variant11;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import bpa1801.variant11.editor.Command;
@@ -19,19 +20,19 @@ public class EditorApp
 
     private static final State state = new State();
 
-    private static final ArrayList<Command> commands = new ArrayList<Command>();
+    private static final List<Command> commands = new ArrayList<Command>();
 
     public static void main(String[] args) throws IOException {
         System.out.println("Specify scene file");
         readScene(scanner.nextLine());
         System.out.println("Specify commands file");
         readCommands(scanner.nextLine());
-        run();
+        run(state, commands);
         System.out.println("Specify output file");
         writeScene(scanner.nextLine());
     }
 
-    public static void run() {
+    public static void run(State state, List<Command> commands) {
         for (Command command : commands) {
             if (command.getName() != "undo") {
                 state.commands.push(command);
@@ -60,11 +61,15 @@ public class EditorApp
         FileLineReader reader = new FileLineReader(file);
         String line = reader.next();
         while (line != null) {
-            Command command = CommandFactory.deserialize(line, state);
-            if (command != null) {
-                commands.add(command);
-            } else {
-                System.out.println(String.format("Wrong command line: %s", line));
+            try {
+                Command command = CommandFactory.deserialize(line, state);
+                if (command != null) {
+                    commands.add(command);
+                } else {
+                    System.out.println(String.format("Wrong command line: %s", line));
+                }
+            } catch (AssertionError ex) {
+                System.out.println(String.format("Wrong params line: %s", ex.getMessage()));
             }
             line = reader.next();
         }
