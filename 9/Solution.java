@@ -1,42 +1,38 @@
 import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
 import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
 
 public class Solution {
-
-	/* Маруся играет в баскетбол и хочет стать профессионалом. Каждый сезон 
-	* она ведет записи своих игр. Она подсчитывает, сколько раз она 
-	* побила свой рекорд очков и сколько раз ухудшила результат. 
-	* n - количество игр за сезон.
-	* 1 <= n <= 1000
-	* 0 <= scores[i] <= 10e8
-	*
-	* Пример: 9
-	*         10 5 20 20 4 5 2 25 1
-	* Ответ: 2 4
-	*/
 
 
     // Complete the breakingRecords function below.
     static int[] breakingRecords(int[] scores) {
-
-
+        int[] k = new int[2];
+        k[0] = 0; k[1] = 0;
+        int max = scores[0];
+        for (int i = 1; i < scores.length; i++) {
+            if (scores[i]>max){
+                max = scores[i];
+                k[0]++;
+            }
+            if (scores[i]<scores[i-1]){
+                k[1]++;
+            }
+        }
+        return k;
     }
 
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws IOException {
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("OUTPUT_PATH"));
 
+        System.out.println("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ РёРіСЂ: ");
         int n = scanner.nextInt();
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
         int[] scores = new int[n];
 
+        System.out.println("Р’РІРµРґРёС‚Рµ РѕС‡РєРё Р·Р° РєР°Р¶РґСѓСЋ РёРіСЂСѓ С‡РµСЂРµР· РїСЂРѕР±РµР»: ");
         String[] scoresItems = scanner.nextLine().split(" ");
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
