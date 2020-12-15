@@ -10,3 +10,7 @@
 log/
 target/
 *.log
+
+# Data
+/data
+/out
