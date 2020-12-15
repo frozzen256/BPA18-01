@@ -1,1 +1,4 @@
 .vscode
+/javalab/.settings
+/javalab/target/*
+!/javalab/target/*.jar
