@@ -1,3 +1,5 @@
+package main.java.com.rukosenpa;
+
 public class Grid {
     private final String[] grid;
 
