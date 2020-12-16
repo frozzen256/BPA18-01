@@ -3,7 +3,6 @@ import java.util.*;
 
 public class Solution {
 
-
     // Complete the breakingRecords function below.
     static int[] breakingRecords(int[] scores) {
         int[] k = new int[2];
