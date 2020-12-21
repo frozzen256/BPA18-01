@@ -50,6 +50,7 @@ P: шаблон для поиска, массив строк
 9505
 3845
 3530
+
 15 15
 400453592126560
 114213133098692
@@ -85,27 +86,28 @@ public class Solution {
         System.out.println("Insert grid dimension");
         int gDim = 0;
         int gRowDim = 0;
+        String gDims = scanner.nextLine().trim();
         while (gDim == 0 || gRowDim == 0) {
-            String gDims = scanner.nextLine().trim();
             try {
                 gDim = Integer.parseInt(gDims.split(" ")[0].trim());
                 gRowDim = Integer.parseInt(gDims.split(" ")[1].trim());
             } catch (NumberFormatException | IndexOutOfBoundsException e) {
                 System.out.println("Wrong format of dimensions. Insert another...");
+                gDims = scanner.nextLine().trim();
             }
         }
 
         final String[] grid = new String[gDim];
         boolean correctString = false;
-        String sample = "";
         for (int i = 0; i < gDim; i++) {
             System.out.printf("Insert %d row of Grid%n", i + 1);
+            String sample = scanner.nextLine().trim();
             while (!correctString) {
-                sample = scanner.next();
                 if (sample.length() == gRowDim) {
                     correctString = true;
                 } else {
                     System.out.println("Incorrect row format. Try another...");
+                    sample = scanner.next().trim();
                 }
             }
             grid[i] = sample;
@@ -116,26 +118,27 @@ public class Solution {
 
         int pDim = 0;
         int pDimRow = 0;
-
+        String pDims = scanner.nextLine().trim();
         while (pDim == 0 || pDimRow == 0) {
-             String pDims = scanner.next();
             try {
                 pDim = Integer.parseInt(pDims.split(" ")[0].trim());
                 pDimRow = Integer.parseInt(pDims.split(" ")[1].trim());
             } catch (NumberFormatException | IndexOutOfBoundsException e) {
                 System.out.println("Wrong dimensions format. Insert another...");
+                pDims = scanner.nextLine().trim();
             }
         }
         final String[] pattern = new String[pDim];
         correctString = false;
         for (int i = 0; i < pDim; i++) {
             System.out.printf("Insert %d row of Pattern%n", i + 1);
+            String sample = scanner.nextLine().trim();
             while (!correctString) {
-                sample = scanner.next();
-                if (sample.length() == gRowDim) {
+                if (sample.length() == pDimRow) {
                     correctString = true;
                 } else {
                     System.out.println("Incorrect row format. Try another...");
+                    sample = scanner.next().trim();
                 }
             }
             pattern[i] = sample;
