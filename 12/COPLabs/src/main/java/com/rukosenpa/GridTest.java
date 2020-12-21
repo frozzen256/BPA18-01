@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import org.junit.jupiter.api.Test;
 
-class GridTestTrue {
+class GridTest {
     @Test
     void searchPatternTrue() {
         String[] initialGrid = new String[]{
