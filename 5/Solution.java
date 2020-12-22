@@ -4,47 +4,60 @@ import java.util.*;
 public class Solution {
 
 	/*
-	* Реализовать функцию вычисляющую высоту дерева. Дерево растет в два цикла каждый год. Каждую весну его высота удваевается,
-	* каждое лето дерево прибавляет один метр. Дерево высаживается высотой 1 метр. 
-	* Вычислить высоту дерева через n - циклов роста.
-	*
-	* Дано: t - количество тестовых примеров
-	*	n - количество циклов роста
-	*  	1 <= t <= 10
-	* 	0 <= t <= 60
-	* Пример:
-	*       2
-	*	0
-	*	4
-	*
-	* Решение:
-	*	1
-	*	7
-	*/
-	
-    static int func(int n) {
-   
+	 * Р РµР°Р»РёР·РѕРІР°С‚СЊ С„СѓРЅРєС†РёСЋ РІС‹С‡РёСЃР»СЏСЋС‰СѓСЋ РІС‹СЃРѕС‚Сѓ РґРµСЂРµРІР°. Р”РµСЂРµРІРѕ СЂР°СЃС‚РµС‚ РІ РґРІР° С†РёРєР»Р° РєР°Р¶РґС‹Р№ РіРѕРґ. РљР°Р¶РґСѓСЋ РІРµСЃРЅСѓ РµРіРѕ РІС‹СЃРѕС‚Р° СѓРґРІР°РµРІР°РµС‚СЃСЏ,
+	 * РєР°Р¶РґРѕРµ Р»РµС‚Рѕ РґРµСЂРµРІРѕ РїСЂРёР±Р°РІР»СЏРµС‚ РѕРґРёРЅ РјРµС‚СЂ. Р”РµСЂРµРІРѕ РІС‹СЃР°Р¶РёРІР°РµС‚СЃСЏ РІС‹СЃРѕС‚РѕР№ 1 РјРµС‚СЂ.
+	 * Р’С‹С‡РёСЃР»РёС‚СЊ РІС‹СЃРѕС‚Сѓ РґРµСЂРµРІР° С‡РµСЂРµР· n - С†РёРєР»РѕРІ СЂРѕСЃС‚Р°.
+	 *
+	 * Р”Р°РЅРѕ: t - РєРѕР»РёС‡РµСЃС‚РІРѕ С‚РµСЃС‚РѕРІС‹С… РїСЂРёРјРµСЂРѕРІ
+	 *	n - РєРѕР»РёС‡РµСЃС‚РІРѕ С†РёРєР»РѕРІ СЂРѕСЃС‚Р°
+	 *  	1 <= t <= 10
+	 * 	0 <= t <= 60
+	 * РџСЂРёРјРµСЂ:
+	 *      2
+	 *		0
+	 *		4
+	 *
+	 * Р РµС€РµРЅРёРµ:
+	 *		1
+	 *		7
+	 */
+
+    static int calc_tree_height(int n) {
+        int tree_height = 1;
+        int spring = 2;
+        int summer = 1;
+        for (int i = 0; i<n;i++){
+            if ((i%2)==0){
+                tree_height *= spring;
+            }
+            else{
+                tree_height += summer;
+            }
+        }
+        return tree_height;
     }
 
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws IOException {
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
-
+        // write your code here
+        System.out.println("Hello, BPA18-01!");
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("OUTPUT_PATH"));
+        System.out.println("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ С‚РµСЃС‚РѕРІС‹С… РїСЂРёРјРµСЂРѕРІ: ");
         int t = scanner.nextInt();
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
+        System.out.println("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ С†РёРєР»РѕРІ СЂРѕСЃС‚Р°: ");
         for (int tItr = 0; tItr < t; tItr++) {
             int n = scanner.nextInt();
             scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
-
-
-            bufferedWriter.write(String.valueOf(result));
-            bufferedWriter.newLine();
+            int result = 0;
+            result = calc_tree_height(n);
+            System.out.println("Result: " + result);
+            //bufferedWriter.write(String.valueOf(result));
+            //bufferedWriter.newLine();
         }
-
         bufferedWriter.close();
-
         scanner.close();
     }
 }
