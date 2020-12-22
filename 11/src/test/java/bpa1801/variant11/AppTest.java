@@ -2,13 +2,32 @@ package bpa1801.variant11;
 
 import static org.junit.Assert.assertSame;
 
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.TestName;
 
 /**
  * Unit test for simple App.
  */
 public class AppTest 
 {
+    private long start;
+
+    @Rule 
+    public TestName name = new TestName();
+
+    @Before
+    public void start() {
+        start = System.nanoTime() / 1000;
+    }
+
+    @After
+    public void end() {
+        System.out.println(String.format("Test: %s, time: %d μs", name.getMethodName(), System.nanoTime() / 1000 - start));
+    }
+    
     @Test
     public void case1LilysHomeworkResultShouldBeCorrect()
     {
