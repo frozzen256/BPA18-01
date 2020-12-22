@@ -27,9 +27,7 @@ Sample Output 1
 28
 */
 
-import java.io.*;
-import java.util.*;
-import java.util.concurrent.*;
+import java.util.Scanner;
 
 public class Solution {
 
@@ -37,7 +35,7 @@ public class Solution {
 
     private static final Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
  //       BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
 
         int[] h = new int[26];
@@ -52,6 +50,7 @@ public class Solution {
 
 
         String word = scanner.nextLine();
+
         findRectangle findRectangle = new findRectangle(h, word);
 
         System.out.print(findRectangle.designerPdfViewer());
