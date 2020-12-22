@@ -3,17 +3,14 @@ package javalab;
 import java.io.*;
 import java.util.Scanner;
 
-public class App 
-{
+public class App {
     private static final Scanner scanner = new Scanner(System.in);
-    public static void main(String[] args) throws IOException {
-        BufferedWriter bufferedWriter = new BufferedWriter(
-            new FileWriter(System.getProperty("user.dir") + File.separator + "solution.txt")
-        );
+
+    public static void main(String[] args) throws IOException, InterruptedException {
+        
         System.out.println("Enter integer broadcast range:");
         int broadcastRange = Integer.parseInt(scanner.nextLine());
         if (broadcastRange == 0) {
-            bufferedWriter.close();
             scanner.close();
             throw new IOException("Unexpected broadcast range: zero");
         }
@@ -27,13 +24,27 @@ public class App
         for (int i = 0; i < housesNumbers.length; i++) {
             housesNumbers[i] = Integer.parseInt(rawHousesNumbers[i]);
         }
-        System.out.println("Target houses for broadcast installation:");
-        int result =  Helper.ackerlandRadioTransmitters(broadcastRange, housesNumbers);
 
-        bufferedWriter.write("Number of houses for broadcast installation: " + String.valueOf(result));
-        bufferedWriter.newLine();
-        bufferedWriter.close();
+        Runnable r = () -> {
+            try {
+                BufferedWriter bufferedWriter = new BufferedWriter(
+                    new FileWriter(System.getProperty("user.dir") + File.separator + "solution.txt")
+                );
+                System.out.printf("%s started... \n", Thread.currentThread().getName());
+                System.out.println("Target houses for broadcast installation:");
+                int result = Helper.ackerlandRadioTransmitters(broadcastRange, housesNumbers);
+                bufferedWriter.write("Number of houses for broadcast installation: " + String.valueOf(result));
+                bufferedWriter.newLine();
+                bufferedWriter.close();
 
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            System.out.printf("%s finished... \n", Thread.currentThread().getName());
+        };
+        Thread myThread = new Thread(r,"MyThread");
+        myThread.start();
+        
         scanner.close();
     }
 }
