@@ -28,17 +28,19 @@ Sample Output 1
 */
 
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class Solution {
 
     // Complete the designerPdfViewer function below.
 
     private static final Scanner scanner = new Scanner(System.in);
-
+    private static final Logger logger = Logger.getLogger("default logger");
     public static void main(String[] args) {
         int[] h = new int[26];
 
         String[] hItems = scanner.nextLine().split(" ");
+        logger.info("Height inserted");
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
         for (int i = 0; i < 26; i++) {
@@ -48,9 +50,12 @@ public class Solution {
 
 
         String word = scanner.nextLine();
+        logger.info("Word inserted");
         new Thread(() -> {
+            logger.info("New thread started");
             findRectangle findRectangle = new findRectangle(h, word);
             System.out.print(findRectangle.designerPdfViewer());
+            logger.info("Rectangle found");
         }).start();
 
         scanner.close();
