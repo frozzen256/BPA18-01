@@ -36,8 +36,6 @@ public class Solution {
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
- //       BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
-
         int[] h = new int[26];
 
         String[] hItems = scanner.nextLine().split(" ");
@@ -50,10 +48,11 @@ public class Solution {
 
 
         String word = scanner.nextLine();
+        new Thread(() -> {
+            findRectangle findRectangle = new findRectangle(h, word);
+            System.out.print(findRectangle.designerPdfViewer());
+        }).start();
 
-        findRectangle findRectangle = new findRectangle(h, word);
-
-        System.out.print(findRectangle.designerPdfViewer());
         scanner.close();
     }
 }
