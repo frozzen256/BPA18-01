@@ -1,4 +1,8 @@
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.IntStream;
 
 public class Module {
 
@@ -6,7 +10,7 @@ public class Module {
     private List<Integer> arr;
 
 
-    public int migratoryBirds(List<Integer> arr) {
+    public int migratoryBirds() {
         int[] countByBirds = new int[5];
         for (Integer integer : arr) {
             countByBirds[integer - 1]++;
@@ -19,6 +23,7 @@ public class Module {
                 maxIndex=i;
             }
         }
+
         return  maxIndex+1;
     }
 

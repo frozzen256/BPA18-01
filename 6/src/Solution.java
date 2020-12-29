@@ -28,9 +28,9 @@ import static java.util.stream.Collectors.toList;
 
 public class Solution{
 
+    private static int result;
 
-
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
 
         Module m = new Module();
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
@@ -39,10 +39,16 @@ public class Solution{
         List<Integer> arr = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
                 .map(Integer::parseInt)
                 .collect(toList());
-        m.setArr(arr);
+
+
         new Thread(() -> {
-            System.out.println(m.migratoryBirds(m.getArr()));
+            m.setArr(arr);
+            result = m.migratoryBirds();
         }).start();
+
+
+        Thread.sleep(600);
+        System.out.println(result);
         /*Testing t = new Testing();
         t.testResult();*/
         bufferedReader.close();
