@@ -40,11 +40,11 @@ public class Solution{
                 .map(Integer::parseInt)
                 .collect(toList());
         m.setArr(arr);
-        new Thread(() -> { // Lambda Expression
+        new Thread(() -> {
             System.out.println(m.migratoryBirds(m.getArr()));
         }).start();
-
-
+        /*Testing t = new Testing();
+        t.testResult();*/
         bufferedReader.close();
     }
 
