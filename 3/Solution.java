@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 class Candles extends Thread
@@ -32,11 +33,14 @@ public class Solution {
         Candles Cn = new Candles(); // Создание потока
         System.out.println("Запуск главного потока");
 
+
         System.out.println("Введите количество свечей: ");
         int arCount = scanner.nextInt();
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
+
         ar = new int[arCount];
+
 
         System.out.println("Введите высоту свечей: ");
         String[] arItems = scanner.nextLine().split(" ");
@@ -47,8 +51,10 @@ public class Solution {
             ar[i] = arItem;
         }
 
+
         Cn.start();
         System.out.println("Главный поток закончен");
+
         scanner.close();
     }
 }
