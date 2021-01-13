@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e03fccaf-caf7-4b24-a333-356c315956be" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1/FirstJavaProgram.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1/Task1_Solution.drawio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/11/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/11/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/11/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/11/src/main/java/bpa1801/variant11/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/11/src/main/java/bpa1801/variant11/EditorApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/11/src/main/java/bpa1801/variant11/LilysHomework.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/11/src/main/java/bpa1801/variant11/editor/Buffer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/11/src/main/java/bpa1801/variant11/editor/Command.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/11/src/main/java/bpa1801/variant11/editor/CommandFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/11/src/main/java/bpa1801/variant11/editor/Coordinates.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/11/src/main/java/bpa1801/variant11/editor/Figure.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/11/src/main/java/bpa1801/variant11/editor/FigureFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/11/src/main/java/bpa1801/variant11/editor/FileLineReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/11/src/main/java/bpa1801/variant11/editor/State.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/11/src/main/java/bpa1801/variant11/editor/commands/AbstractCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/11/src/main/java/bpa1801/variant11/editor/commands/AbstractGeneralCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/11/src/main/java/bpa1801/variant11/editor/commands/Rotate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/11/src/main/java/bpa1801/variant11/editor/commands/Scale.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/11/src/main/java/bpa1801/variant11/editor/commands/Translate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/11/src/main/java/bpa1801/variant11/editor/commands/Undo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/11/src/main/java/bpa1801/variant11/editor/coordinates/CenterCoordinates.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/11/src/main/java/bpa1801/variant11/editor/coordinates/CornerCoordinates.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/11/src/main/java/bpa1801/variant11/editor/figures/Ellipse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/11/src/main/java/bpa1801/variant11/editor/figures/Line.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/11/src/main/java/bpa1801/variant11/editor/figures/Rectangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/11/src/main/java/bpa1801/variant11/editor/math/Geometry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/11/src/test/java/bpa1801/variant11/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/11/src/test/java/bpa1801/variant11/editor/EditorTestCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/11/src/test/java/bpa1801/variant11/editor/commands/RotateTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/11/src/test/java/bpa1801/variant11/editor/commands/ScaleTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/11/src/test/java/bpa1801/variant11/editor/commands/TranslateTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/11/src/test/java/bpa1801/variant11/editor/math/GeometryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/11/test.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/12/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/12/COPLabs/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/12/COPLabs/src/main/java/com/rukosenpa/Grid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/12/COPLabs/src/main/java/com/rukosenpa/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/12/Flowchart Diagram.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/14/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/14/ReadMe.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/14/javalab/.classpath" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/14/javalab/.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/14/javalab/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/14/javalab/readMe.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/14/javalab/solution.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/14/javalab/src/main/java/javalab/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/14/javalab/src/main/java/javalab/Helper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/14/javalab/src/test/java/javalab/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/15/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2/.gitignore.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2/Diagram.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2/logger/UntitledDiagram.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2/logger/src/ConsoleLogger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2/logger/src/LoggerStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2/logger/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2/logger/src/Random.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2/logger/src/SimpleFileLogger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2/logger/src/TimedFileLogger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2/sec/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2/sec/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2/sec/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2/sec/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2/sec/sec.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2/sec/src/Functi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2/sec/src/solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2/sec/test/java/solutionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5/.idea/description.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5/.idea/project-template.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5/5.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5/demo-maven/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5/demo-maven/src/main/java/Program.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5/demo-maven/src/main/java/Tree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5/demo-maven/src/test/java/TreeTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5/diagram_tree_height.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5/out/production/5/com/company/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5/result_program.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5/src/com/company/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/6/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/6/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/6/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/6/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/6/6.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/6/diagram.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/6/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/6/src/Module.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/6/src/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/6/src/Testing.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/7/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/7/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/7/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/7/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/7/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/7/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/7/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/7/7.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/7/diagram_nekit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/7/out/production/7/Solution.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/7/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/7/src/findRectangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/7/tests/findRectangleTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/9/Диаграмма.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Algorithm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Left.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Left.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/People.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Right.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Right.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/BPA18-01/7.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Algorithm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Left.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Right.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/LeftTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/RightTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/1/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/10/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/12/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/1/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/13/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/13/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/14/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/5/OUTPUT_PATH" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/2/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/5/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/5/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/6/Solution.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/7/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/7/src/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/8/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/8/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/9/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/9/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1n1CMxBddyZK7z0w7sGb7dfofzd" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e03fccaf-caf7-4b24-a333-356c315956be" name="Default Changelist" comment="" />
+      <created>1610548179769</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1610548179769</updated>
+      <workItem from="1610548185370" duration="11000" />
+    </task>
+    <servers />
+  </component>
+</project>
