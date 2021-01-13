@@ -2,9 +2,8 @@ import java.util.*;
 
 public class Solution {
 	/*
-	*  Г„Г Г­Г® n - Г·ГЁГ±Г«Г® ГіГ°Г®ГўГ­ГҐГ©. ГЏГ®Г±ГІГ°Г®ГЁГІГј ГІГ°ГҐГіГЈГ®Г«ГјГ­ГЁГЄ ГЁГ§ Г±ГЁГ¬ГўГ®Г«Г®Гў #.
-	*  ГЏГ°ГЁГ¬ГҐГ° Г¤Г«Гї n = 4:
-
+	*  Дано n - число уровней. Построить треугольник из символов #.
+	*  Пример для n = 4:
 	*	   #	
 	*	  ##
 	*	 ###
@@ -13,7 +12,6 @@ public class Solution {
 	    
 	static void func1(int n) {
      
-
        }
     
 	private static final Scanner scanner = new Scanner(System.in);
@@ -23,4 +21,3 @@ public class Solution {
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
       	}	
-

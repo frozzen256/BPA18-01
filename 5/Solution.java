@@ -4,60 +4,47 @@ import java.util.*;
 public class Solution {
 
 	/*
-	 * –†–µ–∞–ª–∏–∑–æ–≤–∞—Ç—å —Ñ—É–Ω–∫—Ü–∏—é –≤—ã—á–∏—Å–ª—è—é—â—É—é –≤—ã—Å–æ—Ç—É –¥–µ—Ä–µ–≤–∞. –î–µ—Ä–µ–≤–æ —Ä–∞—Å—Ç–µ—Ç –≤ –¥–≤–∞ —Ü–∏–∫–ª–∞ –∫–∞–∂–¥—ã–π –≥–æ–¥. –ö–∞–∂–¥—É—é –≤–µ—Å–Ω—É –µ–≥–æ –≤—ã—Å–æ—Ç–∞ —É–¥–≤–∞–µ–≤–∞–µ—Ç—Å—è,
-	 * –∫–∞–∂–¥–æ–µ –ª–µ—Ç–æ –¥–µ—Ä–µ–≤–æ –ø—Ä–∏–±–∞–≤–ª—è–µ—Ç –æ–¥–∏–Ω –º–µ—Ç—Ä. –î–µ—Ä–µ–≤–æ –≤—ã—Å–∞–∂–∏–≤–∞–µ—Ç—Å—è –≤—ã—Å–æ—Ç–æ–π 1 –º–µ—Ç—Ä.
-	 * –í—ã—á–∏—Å–ª–∏—Ç—å –≤—ã—Å–æ—Ç—É –¥–µ—Ä–µ–≤–∞ —á–µ—Ä–µ–∑ n - —Ü–∏–∫–ª–æ–≤ —Ä–æ—Å—Ç–∞.
-	 *
-	 * –î–∞–Ω–æ: t - –∫–æ–ª–∏—á–µ—Å—Ç–≤–æ —Ç–µ—Å—Ç–æ–≤—ã—Ö –ø—Ä–∏–º–µ—Ä–æ–≤
-	 *	n - –∫–æ–ª–∏—á–µ—Å—Ç–≤–æ —Ü–∏–∫–ª–æ–≤ —Ä–æ—Å—Ç–∞
-	 *  	1 <= t <= 10
-	 * 	0 <= t <= 60
-	 * –ü—Ä–∏–º–µ—Ä:
-	 *      2
-	 *		0
-	 *		4
-	 *
-	 * –†–µ—à–µ–Ω–∏–µ:
-	 *		1
-	 *		7
-	 */
-
-    static int calc_tree_height(int n) {
-        int tree_height = 1;
-        int spring = 2;
-        int summer = 1;
-        for (int i = 0; i<n;i++){
-            if ((i%2)==0){
-                tree_height *= spring;
-            }
-            else{
-                tree_height += summer;
-            }
-        }
-        return tree_height;
+	* –Â‡ÎËÁÓ‚‡Ú¸ ÙÛÌÍˆË˛ ‚˚˜ËÒÎˇ˛˘Û˛ ‚˚ÒÓÚÛ ‰ÂÂ‚‡. ƒÂÂ‚Ó ‡ÒÚÂÚ ‚ ‰‚‡ ˆËÍÎ‡ Í‡Ê‰˚È „Ó‰.  ‡Ê‰Û˛ ‚ÂÒÌÛ Â„Ó ‚˚ÒÓÚ‡ Û‰‚‡Â‚‡ÂÚÒˇ,
+	* Í‡Ê‰ÓÂ ÎÂÚÓ ‰ÂÂ‚Ó ÔË·‡‚ÎˇÂÚ Ó‰ËÌ ÏÂÚ. ƒÂÂ‚Ó ‚˚Ò‡ÊË‚‡ÂÚÒˇ ‚˚ÒÓÚÓÈ 1 ÏÂÚ. 
+	* ¬˚˜ËÒÎËÚ¸ ‚˚ÒÓÚÛ ‰ÂÂ‚‡ ˜ÂÂÁ n - ˆËÍÎÓ‚ ÓÒÚ‡.
+	*
+	* ƒ‡ÌÓ: t - ÍÓÎË˜ÂÒÚ‚Ó ÚÂÒÚÓ‚˚ı ÔËÏÂÓ‚
+	*	n - ÍÓÎË˜ÂÒÚ‚Ó ˆËÍÎÓ‚ ÓÒÚ‡
+	*  	1 <= t <= 10
+	* 	0 <= t <= 60
+	* œËÏÂ:
+	*       2
+	*	0
+	*	4
+	*
+	* –Â¯ÂÌËÂ:
+	*	1
+	*	7
+	*/
+	
+    static int func(int n) {
+   
     }
 
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws IOException {
-        // write your code here
-        System.out.println("Hello, BPA18-01!");
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("OUTPUT_PATH"));
-        System.out.println("–í–≤–µ–¥–∏—Ç–µ –∫–æ–ª–∏—á–µ—Å—Ç–≤–æ —Ç–µ—Å—Ç–æ–≤—ã—Ö –ø—Ä–∏–º–µ—Ä–æ–≤: ");
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
         int t = scanner.nextInt();
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
-        System.out.println("–í–≤–µ–¥–∏—Ç–µ –∫–æ–ª–∏—á–µ—Å—Ç–≤–æ —Ü–∏–∫–ª–æ–≤ —Ä–æ—Å—Ç–∞: ");
         for (int tItr = 0; tItr < t; tItr++) {
             int n = scanner.nextInt();
             scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
-            int result = 0;
-            result = calc_tree_height(n);
-            System.out.println("Result: " + result);
-            //bufferedWriter.write(String.valueOf(result));
-            //bufferedWriter.newLine();
+
+
+            bufferedWriter.write(String.valueOf(result));
+            bufferedWriter.newLine();
         }
+
         bufferedWriter.close();
+
         scanner.close();
     }
 }
