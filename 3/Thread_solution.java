@@ -1,28 +1,14 @@
 import java.io.*;
 import java.util.*;
 
-public class Solution {
 
-    static int func(int[] ar) {
-    int max = ar[0];
-    int k = 0;
-    for (int i = 0; i < ar.length; i++) {
-        if (ar[i]>max){
-            max=ar[i];
-        }
-    }
-    for (int i = 0; i < ar.length; i++) {
-        if (ar[i] == max){
-            k++;
-        }
-    }
-    return k;
-}
+public class Thread_solution{
 
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws IOException {
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("OUTPUT_PATH"));
+
+        System.out.println("Главный поток запущен...");
 
         System.out.println("Введите количество свечей: ");
         int arCount = scanner.nextInt();
@@ -38,12 +24,14 @@ public class Solution {
             int arItem = Integer.parseInt(arItems[i]);
             ar[i] = arItem;
         }
-        int result = func(ar);
-        bufferedWriter.write(String.valueOf(result));
-        bufferedWriter.newLine();
 
-        bufferedWriter.close();
+        Thread_candle cn = new Thread_candle(ar);
+
+        new Thread(()->{
+            cn.run();
+        }).start();
 
         scanner.close();
+        System.out.println("Главный поток завершен...");
     }
-}
+} 
