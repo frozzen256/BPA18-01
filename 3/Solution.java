@@ -1,7 +1,10 @@
 import java.util.*;
 
-class MyRunner implements Runnable{
-    public void run(){
+class Candles extends Thread
+{
+    @Override
+    public void run()
+    {
         int max = Solution.ar[0];
         int k = 0;
         for (int i = 0; i < Solution.ar.length; i++) {
@@ -26,6 +29,7 @@ public class Solution {
     
     public static void main(String[] args){
 
+        Candles Cn = new Candles(); // Создание потока
         System.out.println("Запуск главного потока");
 
         System.out.println("Введите количество свечей: ");
@@ -43,8 +47,7 @@ public class Solution {
             ar[i] = arItem;
         }
 
-        MyRunner r = new MyRunner();
-        new Thread(r).start();
+        Cn.start();
         System.out.println("Главный поток закончен");
         scanner.close();
     }
